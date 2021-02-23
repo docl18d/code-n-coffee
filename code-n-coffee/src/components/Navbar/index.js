@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-       Adrein Leavitt
+       Code N Coffee
       </Link>
       <div>
         <ul className="navbar-nav">
@@ -15,28 +15,52 @@ function Navbar() {
             <Link
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/about"
+                window.location.pathname === "/" || window.location.pathname === "/login"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
-              About
+              Login
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/portfolio"
-              className={window.location.pathname === "/portfolio" ? "nav-link active" : "nav-link"}
+              to="/addfido"
+              className={window.location.pathname === "/addfido" ? "nav-link active" : "nav-link"}
             >
-              Portfolio
+              Add Fido
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              to="/book"
-              className={window.location.pathname === "/book" ? "nav-link active" : "nav-link"}
+              to="/bio"
+              className={window.location.pathname === "/bio" ? "nav-link active" : "nav-link"}
             >
-              Book
+              Bio
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/like"
+              className={window.location.pathname === "/like" ? "nav-link active" : "nav-link"}
+            >
+              Likes
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/logout"
+              className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}
+            >
+              Logout
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/updatefido"
+              className={window.location.pathname === "/updatefido" ? "nav-link active" : "nav-link"}
+            >
+              Update Fido
             </Link>
           </li>
         </ul>

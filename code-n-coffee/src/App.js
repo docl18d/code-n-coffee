@@ -17,9 +17,12 @@ function App() {
         <Navbar />
         <Wrapper>
           <Route exact path="/" component={} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/book" component={Book} />
-          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/addFido" component={Addfido} />
+          <Route exact path="/like" component={Like} />
+          <Route exact path="/logout" component={Logout} />
+          <Route exact path="/updatefido" component={Updatefido} />
+          <Route exact path="/bio" component={Bio} />
         </Wrapper>
         <Footer />
       </div>
