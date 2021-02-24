@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import login from "./pages/Login";
 import Addfido from "./pages/Addfido";
 import Bio from "./pages/Bio";
 import Like from "./pages/Like";
