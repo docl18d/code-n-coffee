@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Wrapper>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/login" component={Homepage} />
+          <Route exact path="/homepage" component={Homepage} />
           <Route exact path="/addFido" component={Addfido} />
           <Route exact path="/like" component={Like} />
           <Route exact path="/updatefido" component={Updatefido} />
