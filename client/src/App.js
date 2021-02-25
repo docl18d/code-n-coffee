@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Addfido from "./pages/Addfido";
-import Bio from "./pages/Bio";
+import Browse from "./pages/Browse";
 import Like from "./pages/Like";
 import Homepage from "./pages/Homepage";
 import Updatefido from "./pages/Updatefido";
@@ -20,7 +20,11 @@ function App() {
           <Route exact path="/addFido" component={Addfido} />
           <Route exact path="/like" component={Like} />
           <Route exact path="/updatefido" component={Updatefido} />
-          <Route exact path="/bio" component={Bio} />
+          <Route exact path="/Browse" component={Browse} />
+          <Route exact path="/List" component={List} />
+          <Route exact path="/Register" component={Register} />
+          <Route exact path="/Card" component={Card} />
+          <Route exact path="/Login" component={Login}/>
         </Wrapper>
         <Footer />
       </div>
