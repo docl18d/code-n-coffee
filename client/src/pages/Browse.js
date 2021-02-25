@@ -1,10 +1,10 @@
 import React from "react";
 
-function Bio() {
+function Browse() {
   return (
 <div>
   <h1>#</h1>  
 </div>
   )}
 
-export default Bio;
+export default Browse;
