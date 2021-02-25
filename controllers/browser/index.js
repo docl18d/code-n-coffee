@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// View Specific post
+// View Specific fido
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {

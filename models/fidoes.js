@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model { }
 
-Post.init(
+Fidos.init(
   {
     id: {
       type: DataTypes.INTEGER,
