@@ -1,60 +1,56 @@
-import React from "react";
+import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-function Login() {
-  return (
-    const loginFormHandler = async (event) => {
-      event.preventDefault();
-  
-      // Collect values from the login form
-      const email = document.querySelector('#email-login').value.trim();
-      const password = document.querySelector('#password-login').value.trim();
-  
-      if (email && password) {
-          // Send a POST request to the API endpoint
-          const response = await fetch('/api/users/login', {
-              method: 'POST',
-              body: JSON.stringify({ email, password }),
-              headers: { 'Content-Type': 'application/json' },
-          });
-  
-          if (response.ok) {
-              // If successful, redirect the browser to the dashboard page
-              document.location.replace('/dashboard');
-          } else {
-              alert(response.statusText);
-          }
-      }
-  };
-  
-  const signupFormHandler = async (event) => {
-      event.preventDefault();
-  
-      const name = document.querySelector('#name-signup').value.trim();
-      const email = document.querySelector('#email-signup').value.trim();
-      const password = document.querySelector('#password-signup').value.trim();
-  
-      if (name && email && password) {
-          const response = await fetch('/api/users', {
-              method: 'POST',
-              body: JSON.stringify({ name, email, password }),
-              headers: { 'Content-Type': 'application/json' },
-          });
-  
-          if (response.ok) {
-              document.location.replace('/dashboard');
-          } else {
-              alert(response.statusText);
-          }
-      }
-  };
-  
-  document
-      .querySelector('.login-form')
-      .addEventListener('submit', loginFormHandler);
-  
-  document
-      .querySelector('.signup-form')
-      .addEventListener('submit', signupFormHandler);
-  )}
+class Login extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: '',
+            password: ''
+        };
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    }
+
+    handleSubmit = (event) => {
+        fetch("http://localhost:3001/api/login", {
+            method: 'POST',
+            body: JSON.stringify({ user: this.state }),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then(
+            (response) => response.json()
+        ).then((data) => {
+            this.props.setToken(data.sessionToken)
+        })
+        event.preventDefault()
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Login</h1>
+                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repellat, atque nulla, soluta vero reprehenderit numquam incidunt, rem quaerat quos voluptatum perferendis. Distinctio culpa iste atque blanditiis placeat qui ipsa?</h6>
+                <Form onSubmit={this.handleSubmit} >
+                    <FormGroup>
+                        <Label for="username">Username</Label>
+                        <Input id="li_username" type="text" name="username" placeholder="enter username" onChange={this.handleChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="password">Password</Label>
+                        <Input id="li_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
+                    </FormGroup>
+                    <Button type="submit"> Submit </Button>
+                </Form>
+            </div>
+        )
+    }
+}
 
 export default Login;

@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Like from "./pages/Like";
@@ -8,6 +9,9 @@ import Updatefido from "./pages/Updatefido";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+
 
 function App() {
   return (
@@ -25,6 +29,7 @@ function App() {
           <Route exact path="/Register" component={Register} />
           <Route exact path="/Card" component={Card} />
           <Route exact path="/Login" component={Login}/>
+          <Route exact path="/Login" component={Logout}/>
         </Wrapper>
         <Footer />
       </div>
