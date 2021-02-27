@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/Register" component={Register} />
           <Route exact path="/Card" component={Card} />
           <Route exact path="/Login" component={Login}/>
-          <Route exact path="/Login" component={Logout}/>
+          <Route exact path="/Logout" component={Logout}/>
         </Wrapper>
         <Footer />
       </div>
