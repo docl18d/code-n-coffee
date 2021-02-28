@@ -6,7 +6,10 @@ const sequelize = require('./config/connection');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+
+db.synch({ force: false})
+
+const PORT = process.env.PORT || 3000;
 
 const sess = {
   secret: "fidos fun day",
@@ -24,6 +27,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+db.synch({ force: false})
+
+.then(() => {
+  console.log('db synched')
+  
+})
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now Listening to port: " + PORT));
 });

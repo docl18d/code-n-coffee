@@ -4,11 +4,10 @@ import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Like from "./pages/Like";
 import Homepage from "./pages/Homepage";
-import Updatefido from "./pages/Updatefido";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Wrapper from "./components/Wrapper";
-
+import Navbar from "./components/Navbar/index";
+import Footer from "./components/Footer/index";
+import Wrapper from "./components/Wrapper/index";
+import List from "../../client/src/pages/List/List"
 function App() {
   return (
     <Router>
@@ -16,15 +15,16 @@ function App() {
         <Navbar />
         <Wrapper>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/homepage" component={Homepage} />
-          <Route exact path="/addFido" component={Addfido} />
-          <Route exact path="/like" component={Like} />
-          <Route exact path="/updatefido" component={Updatefido} />
-          <Route exact path="/Browse" component={Browse} />
+          <Route exact path="./pages/Homepage" component={Homepage} />
+          <Route exact path="./pages/Addfido" component={Addfido} />
+          <Route exact path="./pages/Like" component={Like} />
+          {/* <Route exact path="/updatefido" component={Updatefido} /> */}
+          <Route exact path="./pages/Browse" component={Browse} />
           <Route exact path="/List" component={List} />
-          <Route exact path="/Register" component={Register} />
-          <Route exact path="/Card" component={Card} />
-          <Route exact path="/Login" component={Login}/>
+          <Route exact path="../../client/src/pages/List/List" component={List} />
+          {/* <Route exact path="/Register" component={Register} /> */}
+          {/* <Route exact path="/Card" component={Card} /> */}
+          {/* <Route exact path="/Login" component={Login}/> */}
         </Wrapper>
         <Footer />
       </div>

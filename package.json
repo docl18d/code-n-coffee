@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.21.1",
+    "babel": "^6.23.0",
     "bcrypt": "^5.0.0",
+    "bootstrap": "^4.6.0",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.16.3",
@@ -12,8 +14,10 @@
     "if-env": "^1.0.4",
     "mysql2": "^2.2.5",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "webpack": "^4.44.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0"
@@ -25,13 +29,8 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "heroku-postbuild": "npm run build",
+    "seed": "node seed.js"
   },
   "browserslist": {
     "production": [
