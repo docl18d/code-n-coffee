@@ -1,56 +1,44 @@
-import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "./Login.css";
 
-class Login extends Component {
+export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            username: '',
-            password: ''
-        };
+    function validateForm() {
+        return email.length > 0 && password.length > 0;
     }
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value,
-        });
+    function handleSubmit(event) {
+        event.preventDefault();
     }
 
-    handleSubmit = (event) => {
-        fetch("http://localhost:3001/api/login", {
-            method: 'POST',
-            body: JSON.stringify({ user: this.state }),
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        }).then(
-            (response) => response.json()
-        ).then((data) => {
-            this.props.setToken(data.sessionToken)
-        })
-        event.preventDefault()
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Login</h1>
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repellat, atque nulla, soluta vero reprehenderit numquam incidunt, rem quaerat quos voluptatum perferendis. Distinctio culpa iste atque blanditiis placeat qui ipsa?</h6>
-                <Form onSubmit={this.handleSubmit} >
-                    <FormGroup>
-                        <Label for="username">Username</Label>
-                        <Input id="li_username" type="text" name="username" placeholder="enter username" onChange={this.handleChange} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="password">Password</Label>
-                        <Input id="li_password" type="password" name="password" placeholder="enter password" onChange={this.handleChange} />
-                    </FormGroup>
-                    <Button type="submit"> Submit </Button>
-                </Form>
-            </div>
-        )
-    }
+    return (
+        <div className="Login">
+            <Form onSubmit={handleSubmit}>
+                <Form.Group size="lg" controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        autoFocus
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </Form.Group>
+                <Form.Group size="lg" controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </Form.Group>
+                <Button block size="lg" type="submit" disabled={!validateForm()}>
+                    Login
+        </Button>
+            </Form>
+        </div>
+    );
 }
-
-export default Login;
