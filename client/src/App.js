@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Like from "./pages/Like";
@@ -21,8 +21,8 @@ function App() {
           <Route exact path="./pages/Like" component={Like} />
           {/* <Route exact path="/updatefido" component={Updatefido} /> */}
           <Route exact path="./pages/Browse" component={Browse} />
-          <Route exact path="/List" component={List} />
-          <Route exact path="../../client/src/pages/List/List" component={List} />
+          {/* <Route exact path="/List" component={List} /> */}
+          {/* <Route exact path="../../client/src/pages/List/List" component={List} /> */}
           {/* <Route exact path="/Register" component={Register} /> */}
           {/* <Route exact path="/Card" component={Card} /> */}
           {/* <Route exact path="/Login" component={Login}/> */}

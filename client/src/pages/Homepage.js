@@ -1,13 +1,8 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-
 
 function Homepage() {
   return (
     <div>
-      <Navbar />
       <section>
         <Carousel>
           <Carousel.Item>
@@ -46,10 +41,9 @@ function Homepage() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <div>
-        <Footer /> </div>
       </section>
     </div>
+
   )
 }
 export default Homepage;
