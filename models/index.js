@@ -1,16 +1,14 @@
+const Fido = require('./Fido');
 const User = require('./User');
-const Post = require('./post');
 
-User.hasMany(Post, {
-  foreignKey: 'user_id'
-});
 
-Post.belongsTo(User, {
+User.hasMany(Fido, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
-/* Post.hasMany(Comment, {
-  foreignKey: 'post_id'
-}); */
 
-module.exports = { User, Post };
+Fido.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+module.exports = { Fido, User, };

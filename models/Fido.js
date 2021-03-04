@@ -1,52 +1,50 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-class User extends Model {}
+class Fido extends Model {}
 
-User.init(
+Fido.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    firstName: {
+    Name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
+    Breed: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userName: {
+    Sex: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+    Age: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
-  },
-  {
-    password: {
+    City: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [8],
-      },
     },
+    Park: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Owners_Preffered_Drink: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
-  }
+    modelName: 'fido'
+  },
 );
 
-module.exports = User;
+module.exports = Fido;

@@ -64,6 +64,14 @@ function Navbar() {
               Update Fido
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/list"
+              className={window.location.pathname === "/list" ? "nav-link active" : "nav-link"}
+            >
+              List
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
