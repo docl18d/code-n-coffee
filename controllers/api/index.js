@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const fidoRoutes = require('./postRoutes');
-const browserRoutes = require('../browser/index');
-// sets up user and post tables in db
+const fidoRoutes = require('./fidoRoutes');
+
+// sets up user and fido api routes
+
+// login route
 router.use('/user', userRoutes);
-router.use('/post', fidoRoutes);
+// Fido route 
+router.use('/fido', fidoRoutes);
 
 module.exports = router

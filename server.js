@@ -3,11 +3,11 @@ const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 
-db.synch({ force: false})
+// db.synch({ force: false})
 
 const PORT = process.env.PORT || 3000;
 
@@ -27,14 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-db.synch({ force: false})
 
-.then(() => {
-  console.log('db synched')
-  
-})
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now Listening to port: " + PORT));
 });
 
-process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); })
+// process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); })

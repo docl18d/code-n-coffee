@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { Fido, User } = require('../../db/models');
 const withAuth = require('../../utils/auth');
 
 // Home Page
 router.get('/', async (req, res) => {
   try {
-    // Get all posts and JOIN with user data
-    const postData = await Post.findAll({
+    // Get all Fidos and JOIN with user data
+    const fidoData = await Fido.findAll({
       include: [
         {
           model: User,
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
+    const fidos = fidoData.map((post) => fido.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -29,9 +29,9 @@ router.get('/', async (req, res) => {
 });
 
 // View Specific fido
-router.get('/post/:id', async (req, res) => {
+router.get('/fido/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
+    const fidoData = await Fido.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -49,11 +49,11 @@ router.get('/post/:id', async (req, res) => {
       ]
     });    
 
-    const post = postData.get({ plain: true });
-    console.log(post);
+    const fido = fidoData.get({ plain: true });
+    console.log(fido);
     console.log(req.session.user_id);
-    res.render('post', {
-      ...post,
+    res.render('fido', {
+      ...fido,
       logged_in: req.session.logged_in,
       logged_in_user: req.session.user_id
     });
@@ -69,7 +69,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Post }],
+      include: [{ model: User }],
     });
 
     const user = userData.get({ plain: true });
