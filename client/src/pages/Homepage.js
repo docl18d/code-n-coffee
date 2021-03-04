@@ -7,13 +7,13 @@ import Footer from "./components/Footer";
 function Homepage() {
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar />
       <section>
         <Carousel>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="."
+              src="/img/dogs-playing.png"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -46,7 +46,8 @@ function Homepage() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-        <Footer></Footer>
+        <div>
+        <Footer /> </div>
       </section>
     </div>
   )
