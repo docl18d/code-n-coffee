@@ -1,4 +1,4 @@
 module.exports = {
-    Book: require("./fido")
+    Fido: require("./fido")
   };
   
