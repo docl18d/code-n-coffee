@@ -1,35 +1,24 @@
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const routes = require('./controllers');
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const express = require("express");
 
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-// db.synch({ force: false})
-
-const PORT = process.env.PORT || 3000;
-
-const sess = {
-  secret: "fidos fun day",
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-};
-
-// app.use(logger("dev"));
-app.use(session(sess));
-
-app.use(express.json());
+// Define middleware here
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
 app.use(routes);
 
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fido");
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log("Now Listening to port: " + PORT));
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-
-// process.on('SIGINT', () => { console.log("Bye bye!"); process.exit(); })

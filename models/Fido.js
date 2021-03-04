@@ -1,50 +1,17 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-class Fido extends Model {}
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-Fido.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    Name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Breed: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Sex: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Age: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    City: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Park: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Owners_Preffered_Drink: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    }
-  },
-  {
-    sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'fido'
-  },
-);
+const fidoSchema = new Schema({
+  id: {type: String, primaryKey: true, autoIncrement: true},
+  Name: {type: String, allowNull: false},
+  Breed: {type: String, allowNull: false},
+  Sex: {type: String, allowNull: false},
+  Age: {type: String, allowNull: false},
+  City: {type: String, allowNull: false},
+  Park: {type: String, allowNull: false},
+  Owners_Preffered_Drink: {type: DataTypes.String, allowNull: false}
+});
+
+const Fido = mongoose.model("Fido", fidoSchema);
 
 module.exports = Fido;
