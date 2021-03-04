@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Addfido from "./pages/Addfido";
@@ -9,9 +8,11 @@ import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
 import List from "../../client/src/pages/List/List"
+import Register from "./pages/Register";
 function App() {
   return (
     <Router>
+      <Register />
       <div>
         <Navbar />
         <Wrapper>
