@@ -13,7 +13,7 @@ function Homepage() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./public/img/dog-playing.png"
+              src="."
               alt="First slide"
             />
             <Carousel.Caption>
