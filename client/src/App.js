@@ -8,7 +8,7 @@ import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
-import List from "../../client/src/pages/List/List"
+// import List from "../../client/src/pages/List/List"
 function App() {
   return (
     <Router>
