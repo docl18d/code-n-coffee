@@ -5,11 +5,9 @@ import Login from "./components/Login"
 
 function Login() {
     return (
-        <Navbar>
         <div>
             <h1>Login!</h1>
         </div>
-        </Navbar>
     )
 }
 export default Login;

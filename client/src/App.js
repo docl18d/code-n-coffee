@@ -7,12 +7,7 @@ import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
-<<<<<<< HEAD
-import List from "../../client/src/pages/List/List"
-import Register from "./pages/Register";
-=======
 // import List from "../../client/src/pages/List/List"
->>>>>>> 567e8ea403dec7102269bb785fb18349a93127f8
 function App() {
   return (
     <Router>
