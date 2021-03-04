@@ -1,60 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "./Login.css";
 
-function Login() {
-  return (
-    const loginFormHandler = async (event) => {
-      event.preventDefault();
-  
-      // Collect values from the login form
-      const email = document.querySelector('#email-login').value.trim();
-      const password = document.querySelector('#password-login').value.trim();
-  
-      if (email && password) {
-          // Send a POST request to the API endpoint
-          const response = await fetch('/api/users/login', {
-              method: 'POST',
-              body: JSON.stringify({ email, password }),
-              headers: { 'Content-Type': 'application/json' },
-          });
-  
-          if (response.ok) {
-              // If successful, redirect the browser to the dashboard page
-              document.location.replace('/dashboard');
-          } else {
-              alert(response.statusText);
-          }
-      }
-  };
-  
-  const signupFormHandler = async (event) => {
-      event.preventDefault();
-  
-      const name = document.querySelector('#name-signup').value.trim();
-      const email = document.querySelector('#email-signup').value.trim();
-      const password = document.querySelector('#password-signup').value.trim();
-  
-      if (name && email && password) {
-          const response = await fetch('/api/users', {
-              method: 'POST',
-              body: JSON.stringify({ name, email, password }),
-              headers: { 'Content-Type': 'application/json' },
-          });
-  
-          if (response.ok) {
-              document.location.replace('/dashboard');
-          } else {
-              alert(response.statusText);
-          }
-      }
-  };
-  
-  document
-      .querySelector('.login-form')
-      .addEventListener('submit', loginFormHandler);
-  
-  document
-      .querySelector('.signup-form')
-      .addEventListener('submit', signupFormHandler);
-  )}
+export default function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-export default Login;
+    function validateForm() {
+        return email.length > 0 && password.length > 0;
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
+    return (
+        <div className="Login">
+            <Form onSubmit={handleSubmit}>
+                <Form.Group size="lg" controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        autoFocus
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </Form.Group>
+                <Form.Group size="lg" controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </Form.Group>
+                <Button block size="lg" type="submit" disabled={!validateForm()}>
+                    Login
+        </Button>
+            </Form>
+        </div>
+    );
+}

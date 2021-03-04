@@ -1,5 +1,6 @@
 import React, {Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Like from "./pages/Like";
