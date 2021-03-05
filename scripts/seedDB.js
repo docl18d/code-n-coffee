@@ -1,16 +1,21 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const db = require("../models");
 
 // This file empties the fidos collection and inserts the fidos below
-
+console.log('mongo url');
+console.log(process.env.MONGODB_URI);
 mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/Fido"
-);
+  process.env.MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  });
 
 const fidoSeed = [
   {
-    id: 1,
     Fido_Name: "Puck",
     Breed: "Long Hair German Shepherd",
     Sex: "Male",
@@ -21,7 +26,6 @@ const fidoSeed = [
     date: new Date(Date.now())
   },
   {
-    id: 2,
     Fido_Name: "Silas",
     Breed: "Dobberman",
     Sex: "Male",
@@ -32,7 +36,6 @@ const fidoSeed = [
     date: new Date(Date.now())
   },
   {
-    id: 3,
     Fido_Name: "Odin",
     Breed: "Short Hair German Shepherd",
     Sex: "Male",
@@ -43,7 +46,6 @@ const fidoSeed = [
     date: new Date(Date.now())
   },
   {
-    id: 4,
     Fido_Name: "Kassi",
     Breed: "Yorkie",
     Sex: "Male",
@@ -57,7 +59,6 @@ const fidoSeed = [
 
 const userSeed = [
   {
-    id: 1,
     firstName: "Sven",
     lastName: "Jorundsson",
     userName: "svjor56",
@@ -66,7 +67,6 @@ const userSeed = [
     date: new Date(Date.now())
   },
   {
-    id: 2,
     firstName: "Bera",
     lastName: "Gellirdottir",
     userName: "bergell",
@@ -75,7 +75,6 @@ const userSeed = [
     date: new Date(Date.now())
   },
   {
-    id: 3,
     firstName: "Skard",
     lastName: "Gunnvidsson",
     userName: "skargunn",
@@ -84,7 +83,6 @@ const userSeed = [
     date: new Date(Date.now())
   },
   {
-    id: 4,
     firstName: "Sigewulf",
     lastName: "Vekelsson",
     userName: "sigvik6",
@@ -95,13 +93,36 @@ const userSeed = [
 ];
 
 db.Fido
-  .remove({})
-  .then(() => db.Fido.collection.insertMany(fidoSeed, userSeed))
+  .deleteMany({})
+  .then(() =>
+    db.Fido.collection.insertMany(fidoSeed))
+
   .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    console.log("success");
+    console.log(data);
+    // console.log(data.result.n + " records inserted!");
+    // process.exit(0);
   })
   .catch(err => {
+    console.log("error below");
     console.error(err);
     process.exit(1);
   });
+
+  db.User
+  .deleteMany({})
+  .then(() =>
+    db.User.collection.insertMany(userSeed))
+
+  .then(data => {
+    console.log("success");
+    console.log(data);
+    // console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.log("error below");
+    console.error(err);
+    process.exit(1);
+  });
+

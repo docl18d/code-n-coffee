@@ -1,4 +1,5 @@
 module.exports = {
-    Fido: require("./fido")
-  };
+    Fido: require("./fido"),
+    User: require("./user")
+    };
   
