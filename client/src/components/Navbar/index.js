@@ -14,9 +14,9 @@ function Navbar() {
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
-              to="/"
+              to="/login"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/login"
+                window.location.pathname === "/login" || window.location.pathname === "/login"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -50,14 +50,6 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/logout"
-              className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}
-            >
-              Logout
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
               to="/updatefido"
               className={window.location.pathname === "/updatefido" ? "nav-link active" : "nav-link"}
             >
@@ -70,6 +62,14 @@ function Navbar() {
               className={window.location.pathname === "/list" ? "nav-link active" : "nav-link"}
             >
               List
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/logout"
+              className={window.location.pathname === "/logout" ? "nav-link active" : "nav-link"}
+            >
+              Logout
             </Link>
           </li>
         </ul>

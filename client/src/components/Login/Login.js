@@ -5,8 +5,8 @@ import "./login.css";
 export default class Login extends Component {
     render() {
         return (
+            <card className="login-card">
             <form>
-
                 <h3>Log in</h3>
 
                 <div className="form-group">
@@ -31,6 +31,7 @@ export default class Login extends Component {
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
+            </card>
         );
     }
 }
