@@ -4,11 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Like from "./pages/Like";
-import Login from "./components/login";
+import Login from "./components/Login/Login";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
+import List from "./pages/List";
 function App() {
   return (
     // <Router>
