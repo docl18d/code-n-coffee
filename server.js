@@ -1,3 +1,4 @@
+
 const express = require("express");
 
 const mongoose = require("mongoose");
@@ -14,9 +15,15 @@ if (process.env.NODE_ENV === "production") {
 }
 // Add routes, both API and view
 app.use(routes);
-
+console.log(process.env.MONGODB_URI);
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fido");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Fido",
+{ 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 // Start the API server
 app.listen(PORT, function() {
