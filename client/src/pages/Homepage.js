@@ -7,7 +7,6 @@ import Carousel from 'react-bootstrap/Carousel'
 function Homepage() {
   return (
     <div>
-      <Navbar />
       <section>
         <Carousel>
           <Carousel.Item>
@@ -68,13 +67,16 @@ function Homepage() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+
         <div className='login-btn'>
           <button href="/login.js" type="submit">Login</button>
         </div>
         <div>
           <Footer /> </div>
+
       </section>
     </div>
+
   )
 }
 export default Homepage;

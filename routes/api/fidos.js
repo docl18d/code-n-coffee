@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const fidosController = require("../../controllers/fidosController");
-const UsersController = require("../../controllers/usersController");
+const usersController = require("../../controllers/usersController");
 
 // Matches with "/api/fidos"
 router.route("/")
