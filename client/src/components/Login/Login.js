@@ -5,7 +5,7 @@ import "./login.css";
 export default class Login extends Component {
     render() {
         return (
-            <card className="login-card">
+            <div class="card" style={{width: "25rem"}}>
             <form>
                 <h3>Log in</h3>
 
@@ -26,12 +26,12 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                <button type="submit" className="btn btn-dark btn-lg btn-block" href="./homepage">Sign in</button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
-            </card>
+            </div>
         );
     }
 }
