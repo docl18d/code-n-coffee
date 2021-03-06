@@ -1,5 +1,5 @@
 import React from "react";
-class FidoList extends React.Component{
+class Browse extends React.Component{
 
   constructor(props){
 
