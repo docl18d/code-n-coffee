@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Like from "./pages/Like";
-import Login from "./components/login.component";
+import Login from "./components/login";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
