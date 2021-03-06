@@ -1,8 +1,5 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Carousel from 'react-bootstrap/Carousel'
-
 
 function Homepage() {
   return (
@@ -67,13 +64,9 @@ function Homepage() {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-
         <div className='login-btn'>
           <button href="/login.js" type="submit">Login</button>
         </div>
-        <div>
-          <Footer /> </div>
-
       </section>
     </div>
 
