@@ -1,9 +1,11 @@
 import React from "react";
 import "./style.css";
+import { Menu } from "react-mdl";
 
 function ContentCard(props) {
   return (
-    <div className="card">
+  <div class = "container">
+    <div className="content-card">
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
@@ -32,10 +34,15 @@ function ContentCard(props) {
           </li>
         </ul>
       </div>
-      <span onClick={() => props.removeFido(props.id)} className="remove">
-        𝘅
-      </span>
+
     </div>
+    <div class="remove-function">
+        <span onClick={() => props.removeFido(props.id)} className="remove">
+        X
+      </span>
+</div>
+</div >
+
   );
 }
 
