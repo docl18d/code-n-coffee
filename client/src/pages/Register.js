@@ -1,9 +1,9 @@
-import React from "react";
-import { default as Register } from "../components/Register";
+// import React from "react";
+// import RegisterForm from "../components/Register/RegisterForm";
 
-function Login() {
-    return (
-        <Register />
-    )
-}
-export default Login;
+// function Login() {
+//     return (
+//         <RegisterForm />
+//     )
+// }
+// export default Login;

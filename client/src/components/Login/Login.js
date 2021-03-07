@@ -29,10 +29,13 @@ export default class Login extends Component {
                         </div>
                     </div>
 
-                    <Link to="/browse"><button type="submit" className="btn btn-dark btn-lg btn-block">Sign In</button></Link>
-                    <p className="forgot-password text-right">
-                        <a href="#"> Forgot Password?</a>
+
+                    <Link to="/browse"></Link><button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                    <p className="forgot-password">
+                        <a href="#"> Forgot password?</a>
+
                     </p>
+                    <Link to="/register">Don't have an account? Click here</Link>
                 </form>
             </div>
         );

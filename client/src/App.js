@@ -10,6 +10,9 @@ import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
 import List from "./pages/List";
+import Register from "./components/Register/register";
+import LikeForm from "./components/Forms/LikeForm";
+
 function App() {
   return (
     // <Router>
@@ -17,13 +20,13 @@ function App() {
         <Navbar />
         <Wrapper>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/addfido" component={Addfido} />
+          <Route exact path="/addfido" component={LikeForm} />
           <Route exact path="/like" component={Like} />
           <Route exact path="/Browse" component={Browse} />
 
           <Route exact path="/List" component={List} />
           {/* <Route exact path="../../client/src/pages/List/List" component={List} /> */}
-          {/* <Route exact path="/Register" component={Register} /> */}
+          <Route exact path="/Register" component={Register} />
           {/* <Route exact path="/Card" component={Card} /> */}
           <Route exact path="/Login" component={Login}/>
 
