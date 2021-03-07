@@ -13,7 +13,8 @@ function Homepage() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h4>Handle every situation like a dog. If you can't eat or play, just pee on it and walk away!</h4>
+              <h3>Life Strategies</h3>
+              <p >Handle every situation like a dog. If you can't eat or play, just pee on it and walk away!</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -24,7 +25,8 @@ function Homepage() {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h4>The only person who understands me is my dog!</h4>
+              <h3>Self Assurance</h3>
+              <p>The only person who understands me is my dog!</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -35,7 +37,8 @@ function Homepage() {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h4 style={{ color: 'black' }}>I would 100% rather be with my dog!</h4>
+              <h3>Absolute Certainty</h3>
+              <p style={{color:'black'}}>I would 100% rather be with my dog!</p>
             </Carousel.Caption>
           </Carousel.Item>
 
@@ -46,7 +49,8 @@ function Homepage() {
               alt="Fourth slide"
             />
             <Carousel.Caption>
-              <h4>A dog will teach you unconditional love. If you can have that in your life, things won't be too bad!</h4>
+              <h3>Without Limits</h3>
+              <p>A dog will teach you unconditional love. If you can have that in your life, things won't be too bad!</p>
             </Carousel.Caption>
           </Carousel.Item>
 
