@@ -17,13 +17,11 @@ function App() {
         <Navbar />
         <Wrapper>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="./pages/Homepage" component={Homepage} />
-          <Route exact path="./pages/Addfido" component={Addfido} />
-          <Route exact path="./pages/Like" component={Like} />
-          <Route exact path="./pages/Browse" component={Browse} />
+          <Route exact path="/addfido" component={Addfido} />
+          <Route exact path="/like" component={Like} />
+          <Route exact path="/Browse" component={Browse} />
 
-          <Route exact path="/List" component={List} />
-          <Route exact path="../../client/src/pages/List/List" component={List} />
+          <Route exact path="/list" component={List} />
           {/* <Route exact path="/Register" component={Register} /> */}
           {/* <Route exact path="/Card" component={Card} /> */}
           <Route exact path="/Login" component={Login}/>
