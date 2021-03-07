@@ -6,7 +6,7 @@ export default class Login extends Component {
     render() {
         return (
             <div class="card" style={{width: "25rem"}}>
-            <form>
+            <form className= "form-card">
                 <h3>Log in</h3>
 
                 <div className="form-group">
@@ -28,7 +28,7 @@ export default class Login extends Component {
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block" href="./homepage">Sign in</button>
                 <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
+                    <a href="#"> Forgot password?</a>
                 </p>
             </form>
             </div>
