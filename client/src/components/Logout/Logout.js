@@ -1,21 +1,19 @@
-import React from "react";
+handleAuth = () => {
+  const { isLoggedIn } = this.state;
 
-function Logout() {
+  if(isLoggedIn) {
+    // Do logout
+  } else {
+    // Do login
+  }
+}
+
+render() {
+  const { isLoggedIn } = this.state;
+
   return (
-    const logout = async () => {
-      const response = await fetch('/api/users/logout', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-          document.location.replace('/');
-      } else {
-          alert(response.statusText);
-      }
-  };
-  
-  document.querySelector('#logout').addEventListener('click', logout);
-  )};
-
-export default Logout;
+    <button onClick={handleAuth}>
+      {isLoggedIn ? 'Logout' : 'Login'}
+    </button>
+  );
+}
