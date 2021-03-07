@@ -1,5 +1,5 @@
 import React from "react";
-import { default as Register } from "../components/Register";
+import { Register } from "../components/Register";
 
 function Login() {
     return (

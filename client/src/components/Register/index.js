@@ -1,40 +1,170 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+// import classNames from 'classnames';
+import {
+  UserRegistration,
+  UsernameValidation,
+} from '../../services/RegistrationService';
+import Message from '../../Elements/Message';
+import Error from '../../Elements/Error';
+import {
+  REGISTRATION_FIELDS,
+  REGISTRATION_MESSAGE,
+  COMMON_FIELDS,
+  ERROR_IN_REGISTRATION,
+} from '../MessageBundle';
 
-export default class Register extends Component {
-    Render(){
-        const signupFormHandler = async (event) => {
-            event.preventDefault();
-          
-            const name = document.querySelector('#name-signup').value.trim();
-            const email = document.querySelector('#email-signup').value.trim();
-            const password = document.querySelector('#password-signup').value.trim();
-            const confirm = document.querySelector('#password-confirm').value.trim();
-          
-            if(password !== confirm){
-              alert("Passwords do not match.");
-            } else if (name && email && password && confirm) {
-              const response = await fetch('/api/user', {
-                method: 'POST',
-                body: JSON.stringify({ name, email, password }),
-                headers: { 'Content-Type': 'application/json' },
-              });
-          
-              if (response.ok) {
-                document.location.replace('/Browse');
-              } else {
-                alert(response.statusText);
-              }
-            }
-          };
-          
-          document
-            .querySelector('.signup-form')
-            .addEventListener('submit', signupFormHandler);
-        
-            Return (
+export default class Registration extends Component {
+  render() {
+
+    constructor(props); {
+      super(props);
+      this.state = {
+        first_name: '',
+        last_name: '',
+        user_name: '',
+        password: '',
+        register: false,
+        error: false,
+      };
+    };
+
+    handleOnChangeFirstName = e => {
+      this.setState({
+        first_name: e.target.value,
+      });
+    };
+
+    handleOnChangeLastName = e => {
+      this.setState({
+        last_name: e.target.value,
+      });
+    };
+
+    handleOnChangeUserName = e => {
+      this.setState({
+        user_name: e.target.value,
+      });
+    };
+
+    handleOnChangePassword = e => {
+      this.setState({
+        password: e.target.value,
+      });
+    };
+
+    handleOnBlur = async e => {
+      this.setState({
+        user_name: e.target.value,
+      });
+      const data = {
+        user_name: this.state.user_name,
+      };
+      const isUsernameTaken = await UsernameValidation(data);
+
+      isUsernameTaken === 204
+        ? this.setState({ user_name_taken: true })
+        : this.setState({ user_name_taken: false });
+    };
+
+    onSubmit = async e => {
+      e.preventDefault();
+      const data = {
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        user_name: this.state.user_name,
+        password: this.state.password,
+      };
+
+      const registerStatus = await UserRegistration(data);
+      if (registerStatus === 200) {
+        this.setState({
+          first_name: '',
+          last_name: '',
+          user_name: '',
+          password: '',
+          register: true,
+          error: false,
+        });
+      } else
+        this.setState({
+          error: true,
+          register: false,
+        });
+    };
+
+    return (
+      <div className="card" style={{ width: "25rem" }}>
+        <Form className="Registration">
+          <h1> {REGISTRATION_FIELDS.REGISTRATION_HEADING} </h1> <form
+            onSubmit={this.onSubmit}
+          >
             <div>
-                <h1>Woof!</h1>  
-            </div>
-        )
-    }
+              <div className="fields">
+                <p> {REGISTRATION_FIELDS.FIRST_NAME} </p>
+                {' '}
+                <input
+                  type="text"
+                  value={this.state.first_name}
+                  name="FirstName"
+                  onChange={this.handleOnChangeFirstName}
+                />
+                {' '}
+              </div> <div className="fields">
+                <p> {REGISTRATION_FIELDS.LAST_NAME} </p>
+                {' '}
+                <input
+                  type="text"
+                  value={this.state.last_name}
+                  name="LastName"
+                  onChange={this.handleOnChangeLastName}
+                />
+                {' '}
+              </div> <div className="fields">
+                <p> {COMMON_FIELDS.USER_NAME} </p>
+                {' '}
+                <input
+                  type="text"
+                  className={classNames({ error: user_name_taken })}
+                  value={this.state.user_name}
+                  name="Username"
+                  onBlur={this.handleOnBlur}
+                  onChange={this.handleOnChangeUserName}
+                  autoComplete="Username"
+                  required
+                />
+              </div> <div className="fields">
+                <p> {COMMON_FIELDS.PASSWORD} </p>
+                {' '}
+                <input
+                  type="password"
+                  value={this.state.password}
+                  name="Password"
+                  onChange={this.handleOnChangePassword}
+                  autoComplete="password"
+                  required
+                />
+              </div> <div className="buttons">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  disabled={user_name_taken}
+                >
+                  {' '}{REGISTRATION_FIELDS.REGISTER}{' '}
+                </button>
+                {' '}
+                <Link to="/login"> {REGISTRATION_FIELDS.CANCEL} </Link>
+                {' '}
+              </div>{' '}
+            </div>{' '}
+          </form>
+          {' '}
+          {error && <Error message={ERROR_IN_REGISTRATION} />}
+          {' '}
+          {register && <Message message={REGISTRATION_MESSAGE} />}
+          {' '}
+        </Form>
+      </div>
+    );
+  }
 }
