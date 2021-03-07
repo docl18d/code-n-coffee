@@ -14,7 +14,7 @@ function Homepage() {
             />
             <Carousel.Caption>
               <h3>First slide label</h3>
-              <p></p>
+              <p >Handle every situation like a dog. If you can't eat or play, just pee on it and walk away!</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -26,7 +26,7 @@ function Homepage() {
 
             <Carousel.Caption>
               <h3>Second slide label</h3>
-              <p></p>
+              <p>The only person who understands me is my dog!</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -38,7 +38,7 @@ function Homepage() {
 
             <Carousel.Caption>
               <h3>Third slide label</h3>
-              <p></p>
+              <p style={{color:'black'}}>I would 100% rather be with my dog!</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -49,7 +49,7 @@ function Homepage() {
             />
             <Carousel.Caption>
               <h3>Fourth slide label</h3>
-              <p></p>
+              <p>A dog will teach you unconditional love. If you can have that in your life, things won't be too bad!</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -60,7 +60,7 @@ function Homepage() {
             />
             <Carousel.Caption>
               <h3>Fifth slide label</h3>
-              <p></p>
+              <p>LIFE IS BETTER WITH DOGS 🐶</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
