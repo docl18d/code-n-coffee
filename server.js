@@ -1,9 +1,10 @@
 
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+const config = require('./config/database');
+
 const PORT = process.env.PORT || 5000;
 
 // Define middleware here
@@ -16,14 +17,18 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 console.log(process.env.MONGODB_URI);
+
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Fido",
-{ 
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
+
+// changing routing
+mongoose.connect(config.database);
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Fido",
+// { 
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false
+// });
 
 // Start the API server
 app.listen(PORT, function() {
