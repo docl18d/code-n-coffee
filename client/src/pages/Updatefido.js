@@ -47,7 +47,7 @@ const UpdateFido = ({ props }) => {
               <input type="text" id="" value="" />
             </li>
             <li>
-              <label for="Owners_Preffered_Drink">Owner’s Preffered Drink:</label>
+              <label for="Owners_Preferred_Drink">Owner’s Preffered Drink:</label>
               <input type="text" id="" value="" />
             </li>
             <li>

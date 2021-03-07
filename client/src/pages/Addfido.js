@@ -3,11 +3,11 @@ import React from "react";
 import "../components/AddFido/addfido.css";
 import ContentCard from "../components/ContentCard";
 
-
+//my personal suggestion would be to change to class component, set up state like you did
+//in the registration component, and move these inputs down to the render/return
 const Addfido = ({ props }) => {
   let input;
   return (
-    < ContentCard>
       <form onSubmit={
         e => {
           e.preventDefault();
@@ -21,10 +21,10 @@ const Addfido = ({ props }) => {
         }
       }>
       <ul>
-        <li>
+        {/* <li>
           <input type="text" ref={el => (input = el)} />
           <input type="text" id="" value="" />
-        </li>
+        </li> */}
         <br />
         <li>
           <label for="Breed">Breed:</label>
@@ -47,7 +47,7 @@ const Addfido = ({ props }) => {
           <input type="text" id="" value="" />
         </li>
         <li>
-          <label for="Owners_Preffered_Drink">Owner’s Preffered Drink:</label>
+          <label for="Owners_Preferred_Drink">Owner’s Preffered Drink:</label>
           <input type="text" id="" value="" />
         </li>
         <li>
@@ -57,7 +57,7 @@ const Addfido = ({ props }) => {
         </li>
           </ul>
         </form>
-    </ContentCard >
+  
   );
 }
 

@@ -30,7 +30,7 @@ function ContentCard(props) {
             <strong>Park:</strong> {props.park}
           </li>
           <li>
-            <strong>Owners_Preffered_Drink:</strong> {props.owners_Preffered_Drink}
+            <strong>Owners Preferred Drink:</strong> {props.owners_Preferred_Drink}
           </li>
         </ul>
       </div>

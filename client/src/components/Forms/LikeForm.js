@@ -3,7 +3,7 @@
 import React from 'react';
 
 
-export default class ListForm extends React.Component {
+export default class LikeForm extends React.Component {
     state = {
         id: "",
         Fido_Name: "",
@@ -12,42 +12,37 @@ export default class ListForm extends React.Component {
         Age: "",
         City: "",
         Park: "",
-        Owners_Preffered_Drink: ""
+        Owners_Preferred_Drink: ""
     };
 
     change = e => {
-        this.props.onChange({ [e.target.name]: e.target.value });
+        // this.props.onChange({ [e.target.name]: e.target.value });
         this.setState({
             [e.target.name]: e.target.value
         });
 
-        onSubmit = e => {
-            e.preventDefault();
-            // this.props.onSubmit(this.state);
-            this.setState({
-                id: "",
-                Fido_Name: "",
-                Breed: "",
-                Sex: "",
-                Age: "",
-                City: "",
-                Park: "",
-                Owners_Preffered_Drink: ""
-            });
-            this.props.onChange({
-                id: "",
-                Fido_Name: "",
-                Breed: "",
-                Sex: "",
-                Age: "",
-                City: "",
-                Park: "",
-                Owners_Preffered_Drink: ""
-            });
-        };
-
     };
+
+    onSubmit = e => {
+        e.preventDefault();
+
+            var Fido_name = this.state.Fido_name
+            var Breed = this.state.Breed
+            var Sex = this.state.Sex
+            var Age = this.state.Age
+            var City = this.state.City
+            var Park = this.state.Park
+            var Owners_Preferred_Drink = this.state.Owners_Preferred_Drink
+        
+        axios.post("/api/fidos", { Fido_name, Breed, Sex, Age, City, Park, Owners_Preferred_Drink }) 
+        .then((response)=>{
+        // SWAP OUT THIS STRING 
+            this.props.history.push('/addfido')
+        })
+    };
+
     render() {
+        console.log(this.state)
         return (
             <form>
                 <input
@@ -93,10 +88,9 @@ export default class ListForm extends React.Component {
                 />
                 <br />
                 <input
-                    name="Owners_Preffered_Drink"
-                    placeholder='Owners_Preffered_Drink'
-                    value={this.state.Owners_Preffered_Drink}
-                    onChange={e => this.setState(e)}
+                    name="Owners_Preferred_Drink"
+                    placeholder='Owners_Preferred_Drink'
+                    onChange={e => this.change(e)}
                 />
                 <br />
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
