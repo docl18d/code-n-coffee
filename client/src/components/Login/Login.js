@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 
 export default class Login extends Component {
     render() {
+
         return (
             <div class="card" style={{ width: "25rem" }}>
                 <form className="form-card">
-                    <h3>Log in</h3>
+                    <h3>Log In</h3>
 
                     <div className="form-group">
                         <label>Email</label>
@@ -28,9 +29,9 @@ export default class Login extends Component {
                         </div>
                     </div>
 
-                    <Link to="/browse"></Link><button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                    <Link to="/browse"><button type="submit" className="btn btn-dark btn-lg btn-block">Sign In</button></Link>
                     <p className="forgot-password text-right">
-                        <a href="#"> Forgot password?</a>
+                        <a href="#"> Forgot Password?</a>
                     </p>
                 </form>
             </div>
