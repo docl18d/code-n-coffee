@@ -12,7 +12,7 @@ function Navbar() {
       </Link>
       {/* hamburger */}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse">
         <ul className="navbar-nav">
@@ -38,6 +38,14 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
+              to="/updatefido"
+              className={window.location.pathname === "/updatefido" ? "nav-link active" : "nav-link"}
+            >
+              Update Fido
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/bio"
               className={window.location.pathname === "/bio" ? "nav-link active" : "nav-link"}
             >
@@ -54,10 +62,10 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/updatefido"
-              className={window.location.pathname === "/updatefido" ? "nav-link active" : "nav-link"}
+              to="/browse"
+              className={window.location.pathname === "/browse" ? "nav-link active" : "nav-link"}
             >
-              Update Fido
+              Browse
             </Link>
           </li>
           <li className="nav-item">
