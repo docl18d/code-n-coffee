@@ -10,7 +10,7 @@ export default class Login extends Component {
         return (
             <div class="card" style={{ width: "25rem" }}>
                 <form className="form-card">
-                    <h3>Log in</h3>
+                    <h3>Log In</h3>
 
                     <div className="form-group">
                         <label>Email</label>
@@ -29,9 +29,11 @@ export default class Login extends Component {
                         </div>
                     </div>
 
+
                     <Link to="/browse"></Link><button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
                     <p className="forgot-password">
                         <a href="#"> Forgot password?</a>
+
                     </p>
                     <Link to="/register">Don't have an account? Click here</Link>
                 </form>
