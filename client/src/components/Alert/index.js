@@ -13,3 +13,6 @@ function Alert(props) {
 }
 
 export default Alert;
+
+
+// activites 16 and 23 from week 19 //
