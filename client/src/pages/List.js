@@ -1,24 +1,9 @@
-// import React from "react";
+import React from "react";
+import { ListComponent } from "../components/list/index";
 
-
-// function List() {
-//     return (
-//         <ListComponent />
-//     )
-// }
-// export default List;
-
-// import React from "react";
-// class Browse extends React.Component{
-
-//   constructor(props){
-
-//       super(props);
-
-//       this.state={
-
-//           FidoList:[],
-
-//           AddFido:""
-
-//       }
+function Login() {
+    return (
+        <ListComponent />
+    )
+}
+export default Login;
