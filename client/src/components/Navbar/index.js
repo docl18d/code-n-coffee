@@ -10,7 +10,11 @@ function Navbar() {
       <Link className="navbar-brand" to="/">
         Code N Coffee
       </Link>
-      <div>
+      {/* hamburger */}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
