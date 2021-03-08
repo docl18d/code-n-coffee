@@ -1,11 +1,14 @@
-
-const express = require("express");
-const mongoose = require("mongoose");
-const routes = require("./routes");
+const express = require('express');
+const mongoose = require('mongoose');
+// const routes = require('./routes/api');
+const path = require('path');
+require('dotenv').config();
 const app = express();
-// const config = require('./config/database');
+;
+const config = require('./config/database');
 
 const PORT = process.env.PORT || 5000;
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -21,9 +24,6 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-
-// console.log(process.env.MONGODB_URI);
-
 // Connect to the Mongo DB
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Fido",
@@ -31,8 +31,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Fido",
 useNewUrlParser: true,
 useUnifiedTopology: true,
 useCreateIndex: true,
-useFindAndModify: false
+useFindAndModify: false,
+
 });
+
+// routes
+App.use(require("./routes/api.js"));
 
 // Start the API server
 app.listen(PORT, function() {

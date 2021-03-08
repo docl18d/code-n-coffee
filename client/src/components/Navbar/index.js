@@ -36,38 +36,38 @@ function Navbar() {
               Add Fido
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/updatefido"
               className={window.location.pathname === "/updatefido" ? "nav-link active" : "nav-link"}
             >
               Update Fido
             </Link>
-          </li>
-          <li className="nav-item">
+          </li> */}
+          {/* <li className="nav-item">
             <Link
               to="/bio"
               className={window.location.pathname === "/bio" ? "nav-link active" : "nav-link"}
             >
               Bio
             </Link>
-          </li>
-          <li className="nav-item">
+          </li> */}
+          {/* <li className="nav-item">
             <Link
               to="/like"
               className={window.location.pathname === "/like" ? "nav-link active" : "nav-link"}
             >
               Likes
             </Link>
-          </li>
-          <li className="nav-item">
+          </li> */}
+          {/* <li className="nav-item">
             <Link
               to="/browse"
               className={window.location.pathname === "/browse" ? "nav-link active" : "nav-link"}
             >
               Browse
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link
               to="/list"
