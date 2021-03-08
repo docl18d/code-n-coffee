@@ -37,7 +37,7 @@ function Homepage() {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Absolute Certainty</h3>
+              <h3 style={{color:'black'}}>Absolute Certainty</h3>
               <p style={{color:'black'}}>I would 100% rather be with my dog!</p>
             </Carousel.Caption>
           </Carousel.Item>
