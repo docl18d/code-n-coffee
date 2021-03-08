@@ -53,7 +53,7 @@ export default class LikeForm extends React.Component {
                 <form className="form-card">
                     <h3>Add Fido</h3>
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="Fido_Name"
                             placeholder='Fido Name'
                             value={this.state.Fido_name}
@@ -61,7 +61,7 @@ export default class LikeForm extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="Breed"
                             placeholder='Breed'
                             value={this.state.Breed}
@@ -69,7 +69,7 @@ export default class LikeForm extends React.Component {
                         />
                     </div>
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="Sex"
                             placeholder='Sex'
                             value={this.state.Sex}
@@ -78,7 +78,7 @@ export default class LikeForm extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="Age"
                             placeholder='Age'
                             value={this.state.Age}
@@ -87,7 +87,7 @@ export default class LikeForm extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="City"
                             placeholder='City'
                             value={this.state.City}
@@ -96,7 +96,7 @@ export default class LikeForm extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="Park"
                             placeholder='Park'
                             value={this.state.Park}
@@ -105,13 +105,13 @@ export default class LikeForm extends React.Component {
                     </div>
 
                     <div className="form-group">
-                        <input
+                        <input className="form-control"
                             name="Owners_Preferred_Drink"
                             placeholder='Owners Preferred Drink'
                             onChange={e => this.change(e)}
                         />
                     </div>
-                    <button onClick={e => this.onSubmit(e)}>Submit</button>
+                    <button onClick={e => this.onSubmit(e)} className="btn btn-dark btn-lg btn-block">Submit</button>
                 </form >
             </div>
         )
