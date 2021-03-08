@@ -1,13 +1,9 @@
 import React from "react";
-// import { Button } from 'react-mdl';
-import "../components/AddFido/addfido.css";
-import ContentCard from "../components/ContentCard";
 
-//my personal suggestion would be to change to class component, set up state like you did
-//in the registration component, and move these inputs down to the render/return
 const Addfido = ({ props }) => {
   let input;
   return (
+    <div>
       <form onSubmit={
         e => {
           e.preventDefault();
@@ -20,44 +16,23 @@ const Addfido = ({ props }) => {
           input.value = '';
         }
       }>
-      <ul>
-        {/* <li>
-          <input type="text" ref={el => (input = el)} />
-          <input type="text" id="" value="" />
-        </li> */}
-        <br />
-        <li>
-          <label for="Breed">Breed:</label>
-          <input type="text" id="" value="" />
-        </li>
-        <li>
-          <label for="Sex">Sex</label>
-          <input type="text" id="Age" value="" />
-        </li>
-        <li>
-          <label for="Age">Last name:</label>
-          <input type="text" id="" value="" />
-        </li>
-        <li>
-          <label for="City">City:</label>
-          <input type="text" id="" value="" />
-        </li>
-        <li>
-          <label for="Park">Park:</label>
-          <input type="text" id="" value="" />
-        </li>
-        <li>
-          <label for="Owners_Preferred_Drink">Owner’s Preffered Drink:</label>
-          <input type="text" id="" value="" />
-        </li>
-        <li>
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" type="submit">
-            <i class="material-icons">Add Fido</i>
-          </button>
-        </li>
-          </ul>
-        </form>
-  
+        <input type="text" ref={el => (input = el)} />
+        <input type="text" id="" value="" />
+        <label for="Breed">Breed:</label>
+        <input type="text" id="" value="" />
+        <label for="Sex">Sex</label>
+        <input type="text" id="Age" value="" />
+        <label for="Age">Last Name:</label>
+        <input type="text" id="" value="" />
+        <label for="City">City:</label>
+        <input type="text" id="" value="" />
+        <label for="Park">Park:</label>
+        <input type="text" id="" value="" />
+        <label for="Owners_Preffered_Drink">Owner’s Preffered Drink:</label>
+        <input type="text" id="" value="" />
+        <button type="submit">Add Fido</button>
+      </form>
+    </div>
   );
 }
 

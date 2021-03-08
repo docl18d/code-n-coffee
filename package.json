@@ -29,6 +29,7 @@
     "mongoose": "^5.3.16",
     "react-bootstrap": "^1.5.1",
     "react-mdl": "^2.1.0",
+    "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
   }
 }
