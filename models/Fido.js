@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const db = require('./index');
 
 const fidoSchema = new Schema({
   Name: {type: String, allowNull: false},
