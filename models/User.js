@@ -7,7 +7,7 @@ const userSchema = new Schema({
     lastName: { type: String, allowNull: false },
     email: { type: String, allowNull: false, unique: true, validate: { isEmail: true } },
     password: { type: String, allowNull: false, validate: { len: [8] } }
-}),
+})
 
 const User = mongoose.model("User", userSchema);
 
