@@ -1,4 +1,4 @@
 module.exports = {
-    Fido: require("./fido"),
-    User: require("./user"),
+    Fido: require("./Fido"),
+    User: require("./User"),
     };

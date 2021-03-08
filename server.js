@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const routes = require('./routes/api');
+const routes = require('./routes/api');
 const path = require('path');
 require('dotenv').config();
 const app = express();
@@ -26,7 +26,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Fido",
+mongoose.connect(process.env.MONGODB_URI,
 { 
 useNewUrlParser: true,
 useUnifiedTopology: true,
