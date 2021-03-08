@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import axios from "axios";
+
 
 export default class LikeForm extends React.Component {
     state = {
@@ -38,6 +40,8 @@ export default class LikeForm extends React.Component {
         .then((response)=>{
         // SWAP OUT THIS STRING 
             this.props.history.push('/addfido')
+            this.props.history.push('/list')
+
         })
     };
 
