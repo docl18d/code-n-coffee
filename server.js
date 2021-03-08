@@ -6,8 +6,8 @@ const path = require('path');
 
 const app = express();
 ;
-const config = require('./config/database');
-const { restart } = require('nodemon');
+// const config = require('./config/database');
+// const { restart } = require('nodemon');
 
 const PORT = process.env.PORT || 5000;
 
