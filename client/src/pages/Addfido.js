@@ -1,7 +1,4 @@
 import React from "react";
-// import { Button } from 'react-mdl';
-import "../components/AddFido/addfido.css";
-import ContentCard from "../components/ContentCard";
 
 //my personal suggestion would be to change to class component, set up state like you did
 //in the registration component, and move these inputs down to the render/return
