@@ -44,6 +44,8 @@ export default class LikeForm extends React.Component {
                 this.props.history.push('/list')
 
             })
+            // This should send card to LOwners Like Page
+            .then((<Link to="./ListForm"> <Card props={props} /> </Link>))
     };
 
     render() {
