@@ -1,16 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const routes = require('./routes/api');
+const routes = require('./routes');
 const path = require('path');
 
 const app = express();
-;
-// const config = require('./config/database');
-// const { restart } = require('nodemon');
 
 const PORT = process.env.PORT || 5000;
-
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -35,8 +31,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => res.sendFile(path.resolve(___dirname, "client", "build", "index.html")));
 }
-
-
 
 // Start the API server
 app.listen(PORT, function() {
