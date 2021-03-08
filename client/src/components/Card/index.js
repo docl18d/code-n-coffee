@@ -1,26 +1,20 @@
-import React from "react";
-import CardBtn from "../CardBtn";
-import "./style.css";
+import React from 'react';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
-function Card(props) {
+const FidoCard = () => {
   return (
-    <div
-      className="card"
-      style={{
-        backgroundImage: props.image ? `url(${props.image})` : "none"
-      }}
-    >
-      {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
-      <CardBtn
-        onClick={props.handleBtnClick}
-        data-value="pass"
-      />
-      <CardBtn
-        onClick={props.handleBtnClick}
-        data-value="pick"
-      />
-    </div>
-  );
+    <MDBCol style={{ maxWidth: "22rem" }}>
+      <MDBCard>
+        <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg"
+          waves />
+        <MDBCardBody>
+          <MDBCardTitle>Card title</MDBCardTitle>
+          <MDBCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</MDBCardText>
+          <MDBBtn href="#">Click</MDBBtn>
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
+  )
 }
 
-export default Card;
+export default FidoCard;

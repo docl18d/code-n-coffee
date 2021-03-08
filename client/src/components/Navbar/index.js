@@ -73,7 +73,7 @@ function Navbar() {
               to="/list"
               className={window.location.pathname === "/list" ? "nav-link active" : "nav-link"}
             >
-              List
+              Owners List
             </Link>
           </li>
           <li className="nav-item">

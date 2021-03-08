@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fgifs%2FNmGbJwLl7Y4lG&psig=AOvVaw1hrKygJIh-w2Ny1tj25BLz&ust=1615158153829000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDekJXjnO8CFQAAAAAdAAAAABAD);
+}
+
+body {
+    display: flex;
+    font-weight: 400;
+    background: #134E5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+
+body, html, .App, #root, .outer {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-light {
+    background-color: #ffffff;
+    
+}
+
+.outer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: middle;
+    padding-top: 100px; 
+}
+
+.inner {
+    width: 450px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
+}
+
+.outer .form-control:focus {
+    border-color: #167bff;
+    box-shadow: none;
+}
+
+.outer h3 {
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+}
+
+.custom-control-label {
+    font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 10px;
+    color: #7f7d7d;
+}
+
+.forgot-password a {
+    color: #167bff;
+    text-align: center;
+}
+
+.card {
+    margin: auto;
+    text-align: center;
+    margin-top: 7em;
+    border-radius: 4%;
+}
+
+.form-card {
+    margin: auto;
+    margin-top: 2em;
+}
