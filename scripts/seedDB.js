@@ -22,7 +22,7 @@ const fidoSeed = [
     Age: 1,
     City: "Spanish Fork",
     Park: "City Park",
-    Owners_Preffered_Drink: "Iced Caramel Machiatto",
+    Owners_Preferred_Drink: "Iced Caramel Machiatto",
     date: new Date(Date.now())
   },
   {
@@ -32,7 +32,7 @@ const fidoSeed = [
     Age: 6,
     City: "Heber",
     Park: "City Park",
-    Owners_Preffered_Drink: "Coca Cola",
+    Owners_Preferred_Drink: "Coca Cola",
     date: new Date(Date.now())
   },
   {
@@ -42,7 +42,7 @@ const fidoSeed = [
     Age: 12,
     City: "Short Hair German Shepherd",
     Park: "City Park",
-    Owners_Preffered_Drink: "Hot Caramel Machiatto",
+    Owners_Preferred_Drink: "Hot Caramel Machiatto",
     date: new Date(Date.now())
   },
   {
@@ -52,7 +52,7 @@ const fidoSeed = [
     Age: 8,
     City: "Ogden",
     Park: "City Park",
-    Owners_Preffered_Drink: "Hot Vanilla Latte",
+    Owners_Preferred_Drink: "Hot Vanilla Latte",
     date: new Date(Date.now())
   }
 ];
