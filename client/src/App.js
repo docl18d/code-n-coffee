@@ -23,9 +23,9 @@ function App() {
           <Route exact path="/addfido" component={LikeForm} />
           <Route exact path="/like" component={Like} />
           <Route exact path="/Browse" component={Browse} />
-          {/* <Route exact path="/List" component={ListComponent} /> */}
+          <Route exact path="/List" component={ListComponent} />
           {/* <Route exact path="../../client/src/pages/List/List" component={List} /> */}
-          <Route exact path="../../client/src/pages/List/List" component={List} />
+          {/* <Route exact path="../../client/src/pages/List/List" component={List} /> */}
           <Route exact path="/Register" component={Register} />
           {/* <Route exact path="/Card" component={Card} /> */}
           <Route exact path="/Login" component={Login} />
