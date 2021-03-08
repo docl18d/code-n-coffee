@@ -37,8 +37,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-// routes
-// app.use(require("./routes/api.js"));
 
 // Start the API server
 app.listen(PORT, function() {
