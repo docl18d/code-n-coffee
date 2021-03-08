@@ -1,8 +1,8 @@
 // Owners Fido List Added
 
+import axios from 'axios';
 import React from 'react';
 
-import axios from "axios";
 
 
 export default class LikeForm extends React.Component {
@@ -38,8 +38,8 @@ export default class LikeForm extends React.Component {
         
         axios.post("/api/fidos", { Fido_name, Breed, Sex, Age, City, Park, Owners_Preferred_Drink }) 
         .then((response)=>{
-        // SWAP OUT THIS STRING 
-            this.props.history.push('/addfido')
+        // SWAP OUT THIS STRING
+
             this.props.history.push('/list')
 
         })
@@ -98,6 +98,7 @@ export default class LikeForm extends React.Component {
                 />
                 <br />
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
+
             </form >
         );
     }
