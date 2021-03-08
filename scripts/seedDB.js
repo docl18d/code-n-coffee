@@ -61,7 +61,6 @@ const userSeed = [
   {
     firstName: "Sven",
     lastName: "Jorundsson",
-    userName: "svjor56",
     email: "svjor@gmail.com",
     Password: "Pq6789ht",
     date: new Date(Date.now())
@@ -69,7 +68,6 @@ const userSeed = [
   {
     firstName: "Bera",
     lastName: "Gellirdottir",
-    userName: "bergell",
     email: "bgelli@festung.org",
     Password: "98Ufstg",
     date: new Date(Date.now())
@@ -77,7 +75,6 @@ const userSeed = [
   {
     firstName: "Skard",
     lastName: "Gunnvidsson",
-    userName: "skargunn",
     email: "floki@nord.com",
     Password: "Juhn45aj",
     date: new Date(Date.now())
@@ -85,7 +82,6 @@ const userSeed = [
   {
     firstName: "Sigewulf",
     lastName: "Vekelsson",
-    userName: "sigvik6",
     email: "thorrules@notdic.no",
     Password: "tRor98ils",
     date: new Date(Date.now())

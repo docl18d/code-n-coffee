@@ -5,12 +5,11 @@ import Addfido from "./pages/Addfido";
 import Browse from "./pages/Browse";
 import Homepage from "./pages/Homepage";
 import Like from "./pages/Like";
-// import List from "./pages/List";
 import Login from "./components/Login/Login";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
-import List from "./pages/List";
+import ListComponent from "./components/list/ListComponent";
 import Register from "./components/Register/register";
 import LikeForm from "./components/Forms/LikeForm";
 
