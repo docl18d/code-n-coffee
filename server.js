@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 
-console.log(process.env.MONGODB_URI);
+// console.log(process.env.MONGODB_URI);
 
 // Connect to the Mongo DB
 
