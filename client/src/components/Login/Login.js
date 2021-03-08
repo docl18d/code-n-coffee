@@ -28,7 +28,7 @@ export default class Login extends Component {
                     </div>
 
 
-                    <Link to="/browse"></Link><button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                    <Link to="/browse"><button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button></Link>
                     <p className="forgot-password">
                         <a href="#"> Forgot password?</a>
 
