@@ -9,7 +9,6 @@ import Login from "./components/Login/Login";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
 import Wrapper from "./components/Wrapper/index";
- import ListComponent from "./components/list/ListComponent";
 import Register from "./components/Register/register";
 import LikeForm from "./components/Forms/LikeForm";
 
