@@ -1,106 +1,106 @@
-// import React from "react";
-// class Browse extends React.Component{
+import React from "react";
+class Browse extends React.Component {
 
-//   constructor(props){
+    constructor(props) {
 
-//       super(props);
+        super(props);
 
-//       this.state={
+        this.state = {
 
-//         //   FidoList:[],
+            //   FidoList:[],
 
-//           AddFido:""
+            AddFido: ""
 
-//       }
+        }
 
-//   };
-
-
-
-//   onValueChange=(e)=>{
-
-//       const Fido=e.target.value;
-
-//       this.setState({Fido})
-
-//   };
+    };
 
 
 
-//   removeItem=(props)=>{
+    onValueChange = (e) => {
 
-//       this.setState({FidoList:this.state.FidoList.splice(props,1)})
+        const Fido = e.target.value;
 
-//       console.log(this.state.FidoList)
+        this.setState({ Fido })
 
-//   };
-
-
-
-//   onSubmit=(e)=>{
-
-//       e.preventDefault();
-
-//       const {FidoList,Fido}=this.state
-
-//       this.setState({FidoList:[FidoList,Fido]})
-
-//       this.setState({Fido:""})
-
-//       console.log(this.state.FidoList)
-
-//   };
+    };
 
 
 
-// render(){
+    removeItem = (props) => {
 
-//       const myList=this.state.FidoList.map((Fido,index)=>(
+        this.setState({ FidoList: this.state.FidoList.splice(props, 1) })
 
-//           <li key={index}>
+        console.log(this.state.FidoList)
 
-//               {Fido}
+    };
 
-//               <button onClick={()=>this.removeItem(index)}>x</button>
 
-//           </li>
 
-//       ))
+    onSubmit = (e) => {
 
-//       return (
+        e.preventDefault();
 
-//           <div>
+        const { FidoList, Fido } = this.state
 
-//               <form onSubmit={this.onSubmit}>
+        this.setState({ FidoList: [FidoList, Fido] })
 
-//                   <input 
+        this.setState({ Fido: "" })
 
-//                       type="text"
+        console.log(this.state.FidoList)
 
-//                       value={this.state.Fido}
+    };
 
-//                       onChange={this.onValueChange}
 
-//                       autoFocus
 
-//                       placeholder= "Fido"
+    render() {
 
-//                   />
+        const myList = this.state.FidoList.map((Fido, index) => (
 
-//               </form>
+            <li key={index}>
 
-//               <ol>
+                {Fido}
 
-//                   {myList}
+                <button onClick={() => this.removeItem(index)}>x</button>
 
-//               </ol>
+            </li>
 
-//           </div>
+        ))
 
-//       )
+        return (
 
-//   };
+            <div>
 
-// };
+                <form onSubmit={this.onSubmit}>
 
-// export default Browse;
+                    <input
+
+                        type="text"
+
+                        value={this.state.Fido}
+
+                        onChange={this.onValueChange}
+
+                        autoFocus
+
+                        placeholder="Fido"
+
+                    />
+
+                </form>
+
+                <ol>
+
+                    {myList}
+
+                </ol>
+
+            </div>
+
+        )
+
+    };
+
+};
+
+export default Browse;
