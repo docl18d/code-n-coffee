@@ -88,36 +88,24 @@ const userSeed = [
   }
 ];
 
-db.Fido
-  .deleteMany({})
-  .then(() =>
-    db.Fido.collection.insertMany(fidoSeed))
-
+db.Fido.remove({})
+  .then(() => db.Fido.collection.insertMany(fidoSeed))
   .then(data => {
-    console.log("success");
-    console.log(data);
-    // console.log(data.result.n + " records inserted!");
-    // process.exit(0);
+    console.log(data.result.n + " fidos inserted!");
+    process.exit(0);
   })
   .catch(err => {
-    console.log("error below");
     console.error(err);
     process.exit(1);
   });
 
-  db.User
-  .deleteMany({})
-  .then(() =>
-    db.User.collection.insertMany(userSeed))
-
+  db.User.remove({})
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
-    console.log("success");
-    console.log(data);
-    // console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " users inserted!");
     process.exit(0);
   })
   .catch(err => {
-    console.log("error below");
     console.error(err);
     process.exit(1);
   });
