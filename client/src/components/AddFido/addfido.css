@@ -1,5 +1,6 @@
-ul {
-    list-style-type: none;
-    padding: 1em;
-    padding-bottom: 1rem;
+.card {
+    margin: auto;
+    text-align: center;
+    margin-top: 5em;
+    border-radius: 4%;
 }

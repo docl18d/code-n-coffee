@@ -37,7 +37,7 @@ class Register extends Component {
         return (
             <>
             <form>
-                <input type="text" name="name" placeholder="john ode" onChange={this.handleInput} />
+                <input type="text" name="name" placeholder="john doe" onChange={this.handleInput} />
                 <input type="text" name="email" placeholder="email@email.com" onChange={this.handleInput} />
                 <input type="text" name="password" placeholder="password" onChange={this.handleInput} />
             </form>
