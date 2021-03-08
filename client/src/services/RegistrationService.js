@@ -12,7 +12,7 @@ export const UserRegistration = data => {
         .then(res => res.status);
 };
 
-export const UsernameValidation = data => (
-    axios.post('http://localhost:5000/registration/validateUsername', data)
+export const emailValidation = data => (
+    axios.post('http://localhost:5000/registration/validateEmail', data)
     .then(exist => exist.status)
 )

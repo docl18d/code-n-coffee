@@ -40,4 +40,3 @@
 // }
 
 
-// mongodb atlas( mongo.exe mongodb://$[hostlist]/$[Fido]?authSource=$[authSource] --username $[docl18d])
