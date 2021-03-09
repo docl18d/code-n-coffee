@@ -27,8 +27,10 @@ class Register extends Component {
         var lastName = this.state.lastName
         var email = this.state.email
         var password = this.state.password
+
 console.log({ firstName, lastName, email, password });
         axios.post('/api/user', { firstName, lastName, email, password }) 
+
         .then((response)=>{
             console.log(response);
             this.props.history.push('/addfido')

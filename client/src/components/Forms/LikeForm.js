@@ -37,12 +37,9 @@ export default class LikeForm extends React.Component {
         var Park = this.state.Park
         var Owners_Preferred_Drink = this.state.Owners_Preferred_Drink
 
-        axios.post("/api/fidos", { Fido_name, Breed, Sex, Age, City, Park, Owners_Preferred_Drink })
+        axios.post("/users", { Fido_name, Breed, Sex, Age, City, Park, Owners_Preferred_Drink })
             .then((response) => {
-                // SWAP OUT THIS STRING
-
                 this.props.history.push('/list')
-
             })
     };
 
