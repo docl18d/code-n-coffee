@@ -92,12 +92,13 @@ db.Fido.remove({})
   .then(() => db.Fido.collection.insertMany(fidoSeed))
   .then(data => {
     console.log(data.result.n + " fidos inserted!");
-    process.exit(0);
+    
   })
   .catch(err => {
     console.error(err);
-    process.exit(1);
-  });
+    
+  })
+  .then (
 
   db.User.remove({})
   .then(() => db.User.collection.insertMany(userSeed))
@@ -108,5 +109,5 @@ db.Fido.remove({})
   .catch(err => {
     console.error(err);
     process.exit(1);
-  });
+  }));
 
